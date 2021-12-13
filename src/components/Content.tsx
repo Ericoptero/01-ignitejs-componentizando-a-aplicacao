@@ -1,6 +1,13 @@
+import { useContext } from 'react';
+
+import { MoviesContext } from '../hooks/MoviesProvider';
 import { MovieCard } from './MovieCard';
 
+import '../styles/content.scss';
+
 export function Content() {
+  const { selectedGenre, movies } = useContext(MoviesContext);
+
   return (
     <div className="container">
       <header>

@@ -1,16 +1,12 @@
+import { useContext, useState } from 'react';
+
+import { MoviesContext } from '../hooks/MoviesProvider';
 import { Button } from './Button';
 
-interface GenreProps {
-  id: number;
-  name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
-  title: string;
-}
+import '../styles/sidebar.scss';
 
-interface SideBarProps {
-  genres: GenreProps[];
-}
-
-export function SideBar({genres}: SideBarProps) {
+export function SideBar() {
+  const { genres, selectedGenreId, setSelectedGenreId } = useContext(MoviesContext);
   
   function handleClickButton(id: number) {
     setSelectedGenreId(id);
